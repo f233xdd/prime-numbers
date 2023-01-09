@@ -1,12 +1,14 @@
 import time
 import threading
 import math
+import json
 
 
 exit_flag = False
 alive = True
 time_out = 60
 time1 = time.perf_counter()
+mode = 'json'
 
 
 def core_function(max_number=500):
@@ -52,7 +54,7 @@ def stopwatch():
     print("Stopwatch start!")
 
     while True:
-        # 计时器, 间隔为0.01s
+
         time2 = time.perf_counter()
         time_in_total = round(time2 - time1, 2)
         if exit_flag:
@@ -77,8 +79,20 @@ def run_core_function(var=500000):
         number_list.append(num)
 
     exit_flag = True
-    print("Finished!")
-    print(number_list)
+    
+    if mode == 'txt':
+        with open('result.txt', 'w') as text:
+            text.write(str(number_list))
+    elif mode == 'json':
+        with open('result.json', 'w') as json_file:
+            json_file.write(json.dumps(number_list))
+    else:
+        print("Do you want to print the result?)
+        decision = input('> ')
+        if decision == 'yes', or decision == 'Yes':
+              print(number_list)
+        else:
+              print("Ok.')
 
 
 def main():
