@@ -4,16 +4,16 @@ import math
 import json
 
 
-exit_flag = False
-alive = True
+exit_flag = False # unchanged variable
+alive = True # unchanged variable
 time_out = 60
-time1 = time.perf_counter()
+time1 = time.perf_counter() # get start time
 mode = 'json'
 
 
 def core_function(max_number=500):
     """计算素数的核心函数"""
-    print("Core function start!")
+    # print("Core function start!")
     print(f"Target: {max_number}")
 
     for current_number in range(1, max_number):
@@ -51,7 +51,7 @@ def core_function(max_number=500):
 def stopwatch():
     """简单的计数器"""
     global alive
-    print("Stopwatch start!")
+    # print("Stopwatch start!")
 
     while True:
 
@@ -79,20 +79,24 @@ def run_core_function(var=500000):
         number_list.append(num)
 
     exit_flag = True
-    
+
     if mode == 'txt':
         with open('result.txt', 'w') as text:
             text.write(str(number_list))
+            
     elif mode == 'json':
         with open('result.json', 'w') as json_file:
             json_file.write(json.dumps(number_list))
+            
     else:
-        print("Do you want to print the result?)
+        print("Do you want to print the result?")
+        
         decision = input('> ')
         if decision == 'yes', or decision == 'Yes':
               print(number_list)
         else:
-              print("Ok.')
+              print('Ok...')
+    print("Finishes successfully.")
 
 
 def main():
@@ -107,7 +111,7 @@ def main():
         # 同步线程
         thread.join()
 
-    print("Main thread is over!")
+    # print("Main thread is over!")
 
 
 if __name__ == '__main__':
