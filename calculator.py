@@ -4,8 +4,8 @@ import math
 import json
 
 
-exit_flag = False # unchanged variable
-alive = True # unchanged variable
+exit_flag = False # unchangeable variable
+alive = True # unchangeable variable
 time_out = 60
 time1 = time.perf_counter() # get start time
 mode = 'json'
@@ -115,5 +115,5 @@ def main():
 
 
 if __name__ == '__main__':
-    # 运行主函数
+    # run main function
     main()
