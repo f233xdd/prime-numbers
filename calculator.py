@@ -75,7 +75,7 @@ def run_core_function(var=500000):
     number_list = []
 
     for num in core_function(var):
-        # 以迭代器的形式运行core_function
+        # run core function
         number_list.append(num)
 
     exit_flag = True
@@ -105,10 +105,10 @@ def main():
     thread2 = threading.Thread(target=stopwatch)
 
     for thread in [thread1, thread2]:
-        # 开始线程
+        # start threads
         thread.start()
     for thread in [thread1, thread2]:
-        # 同步线程
+        # synchronize threads
         thread.join()
 
     # print("Main thread is over!")
