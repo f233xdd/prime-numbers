@@ -96,7 +96,7 @@ def run_core_function(var=500000):
               print(number_list)
         else:
               print('Ok...')
-    print("Finishes successfully.")
+    print("Finished successfully.")
 
 
 def main():
