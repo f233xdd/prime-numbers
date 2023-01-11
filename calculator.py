@@ -92,7 +92,7 @@ def run_core_function(var=500000):
         print("Do you want to print the result?")
         
         decision = input('> ')
-        if decision == 'yes', or decision == 'Yes':
+        if decision == 'yes' or decision == 'Yes':
               print(number_list)
         else:
               print('Ok...')
